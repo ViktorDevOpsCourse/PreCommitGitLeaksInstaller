@@ -34,6 +34,10 @@ install_PreCommit(){
       echo "You already using pre-commit hook"
       echo -n "Do you want overwrite it [yes|no]: "
       read -r adjustment
+      if [[ "$adjustment" != "yes" && "$adjustment" != "no" ]]; then
+          echo "Wrong argument $adjustment"
+          return
+      fi
       if [[ "$adjustment" == "yes" ]]; then
           move_PreCommit
       else
