@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	GitLeakBinPAth = "./bin/gitleaks"
+	GitLeakBinPAth = "../../bin/gitleaks"
 )
 
 func isGitLeaksEnabled() bool {
@@ -35,7 +35,7 @@ func main() {
 		return
 	}
 
-	cmd := exec.Command(GitLeakBinPAth, "protect", "-v", "--staged", "--config", "./bin/config.toml", "--no-banner")
+	cmd := exec.Command(GitLeakBinPAth, "protect", "-v", "--staged", "--no-banner")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err := cmd.Run()
