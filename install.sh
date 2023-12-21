@@ -67,6 +67,7 @@ install_GitLeaks
 
 echo "install pre-commit"
 install_PreCommit
+echo "Success installed: pre-commit"
 
 git config hooks.gitleaks true
 
