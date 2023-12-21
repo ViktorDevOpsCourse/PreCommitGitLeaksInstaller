@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	GitLeakBinPAth = "../../bin/gitleaks"
+	GitLeakBinPAth = "./bin/gitleaks"
 )
 
 func isGitLeaksEnabled() bool {
@@ -20,11 +20,7 @@ func isGitLeaksEnabled() bool {
 }
 
 func isGitLeaksInstalled() bool {
-	cmd := exec.Command("ls", "-l")
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Run()
-	cmd = exec.Command(GitLeakBinPAth, "version")
+	cmd := exec.Command(GitLeakBinPAth, "version")
 	err := cmd.Run()
 	return err == nil
 }
