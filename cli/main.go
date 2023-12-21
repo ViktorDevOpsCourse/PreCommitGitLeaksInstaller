@@ -35,6 +35,7 @@ func main() {
 		return
 	}
 
+	fmt.Println("Running pre-commit hook")
 	cmd := exec.Command(GitLeakBinPAth, "protect", "-v", "--staged", "--no-banner")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
