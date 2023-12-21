@@ -32,7 +32,7 @@ install_PreCommit(){
   cd ./preCommitGitLeaksInstaller && go build -o pre-commit ./cli
   if [ -f "../../.git/hooks/pre-commit" ]; then
       echo "You already using pre-commit hook"
-      echo "Do you want overwrite it [yes|no]: "
+      echo -n "Do you want overwrite it [yes|no]: "
       read -r adjustment
       if [[ "$adjustment" == "yes" ]]; then
           move_PreCommit
