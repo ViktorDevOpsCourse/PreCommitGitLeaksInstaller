@@ -47,6 +47,10 @@ install_PreCommit(){
       move_PreCommit
   fi
 
+
+  git config hooks.gitleaks true
+
+  echo "Success installed: pre-commit"
 }
 
 move_PreCommit(){
@@ -71,9 +75,6 @@ install_GitLeaks
 
 echo "install pre-commit"
 install_PreCommit
-echo "Success installed: pre-commit"
-
-git config hooks.gitleaks true
 
 echo "clean up"
 cleanUp
