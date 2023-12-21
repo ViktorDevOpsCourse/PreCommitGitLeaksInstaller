@@ -36,6 +36,7 @@ install_PreCommit(){
       read -r adjustment
       if [[ "$adjustment" != "yes" && "$adjustment" != "no" ]]; then
           echo "Wrong argument $adjustment"
+          cd ../ || exit
           return
       fi
       if [[ "$adjustment" == "yes" ]]; then
